@@ -1,5 +1,5 @@
 package com.CapgeTicketEvents.model;
 
-public class EventModel {
+public class Event {
 
 }
