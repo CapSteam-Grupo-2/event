@@ -19,9 +19,9 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * @author dchenlia 
- * Para la persistencia en la DDBB usando lombok
- * Clase del modelo de los eventos que existen        
+ * @author dchenlia
+ *Para la persistencia en la DDBB usando lombok
+ *Location es foranea de event
  */
 @Entity
 @Setter
@@ -29,38 +29,33 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name = "event")
-public class Event {
-
+@Table(name = "location")
+public class Location {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	
+	@OneToMany(mappedBy = "location")
+	List<Event> event;
 	@Column(name = "name")
 	@NotEmpty(message = "Falta o hay un error en name")
 	String name;
+
+	@Column(name = "city")
+	@NotEmpty(message = "Falta o hay un error en city")
+	String city;
+
+	@Column(name = "addres")
+	@NotEmpty(message = "Falta o hay un error en addres")
+	String addres;
 
 	@Column(name = "type")
 	@NotEmpty(message = "Falta o hay un error en type")
 	String type;
 
-	@Column(name = "description")
-	@NotEmpty(message = "Falta o hay un error en description")
-	String description;
+	@Column(name = "capacity")
+	@NotEmpty(message = "Falta o hay un error en capacity")
+	String capacity;
 
-	// Fecha
-	@Column(name = "date")
-	@NotEmpty(message = "Falta o hay un error en date")
-	String date;
-
-	// Hora
-	@Column(name = "time")
-	@NotEmpty(message = "Falta o hay un error en time")
-	String time;
-
-	
-	@NotEmpty(message = "Falta o hay un error en location")
-	@ManyToOne()
-	@JoinColumn()
-	private Location location;
 }
