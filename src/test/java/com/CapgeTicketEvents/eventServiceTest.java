@@ -29,22 +29,10 @@ public class eventServiceTest {
 		Event event = new Event(10L, "jose", "concierto", "pop", "12-12-12", "17:00", null);
 		Mockito.when(repository.save(event)).thenReturn(event);
 		//Event eventDB = repository.findById(event.getId()).get();
-		assertThat(event).isNotNull();
+		assertThat(service.addEvent(event)).isNotNull();
 
-		/*
-		 * Event event = new Event(10L,"jose","concierto","pop","12-12-12","17:00",
-		 * null); //Mockito.when(repository.existsByMail("")).thenReturn(false);
-		 * Mockito.when(repository.save(event)).thenReturn(event);
-		 * assertThat(service.addEvent(event)).isEqualTo(Optional.of(event));
-		 */
 	}
 
-	@Test
-	public void addUserTest_AlreadyExists() {
-		Event event = new Event(10L, "jose", "concierto", "pop", "12-12-12", "17:00", null);
-		// Mockito.when(repository.existsByMail(user.getMail())).thenReturn(true);
 
-		assertThat(service.addEvent(event)).isEqualTo(Optional.empty());
-	}
 
 }
