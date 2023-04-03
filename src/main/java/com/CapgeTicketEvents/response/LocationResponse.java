@@ -7,14 +7,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class EventResponse {
+public class LocationResponse {
 
 	private long id;
 	private String name;
+	private String city;
+	private String addres;
 	private String type;
-	private String description;
-	private String date;
-	private String time;
-	private LocationResponse location;
+	private String capacity;
 
 }
