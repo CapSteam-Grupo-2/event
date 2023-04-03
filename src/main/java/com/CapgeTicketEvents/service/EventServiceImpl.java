@@ -8,7 +8,7 @@ import com.CapgeTicketEvents.repository.EventRepository;
 public class EventServiceImpl implements EventService{
 
 	@Autowired
-	EventRepository eventRepository;
+	private EventRepository eventRepository;
 	
 	/**
 	 * Metodo save Event
