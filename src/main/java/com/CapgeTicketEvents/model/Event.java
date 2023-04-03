@@ -34,29 +34,29 @@ public class Event {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private long id;
 
 	@Column(name = "name")
 	@NotEmpty(message = "Falta o hay un error en name")
-	String name;
+	private String name;
 
 	@Column(name = "type")
 	@NotEmpty(message = "Falta o hay un error en type")
-	String type;
+	private String type;
 
 	@Column(name = "description")
 	@NotEmpty(message = "Falta o hay un error en description")
-	String description;
+	private String description;
 
 	// Fecha
 	@Column(name = "date")
 	@NotEmpty(message = "Falta o hay un error en date")
-	String date;
+	private String date;
 
 	// Hora
 	@Column(name = "time")
 	@NotEmpty(message = "Falta o hay un error en time")
-	String time;
+	private String time;
 
 	
 	@NotEmpty(message = "Falta o hay un error en location")

@@ -37,25 +37,26 @@ public class Location {
 
 	
 	@OneToMany(mappedBy = "location")
-	List<Event> event;
+	private List<Event> event;
+	
 	@Column(name = "name")
 	@NotEmpty(message = "Falta o hay un error en name")
-	String name;
+	private String name;
 
 	@Column(name = "city")
 	@NotEmpty(message = "Falta o hay un error en city")
-	String city;
+	private String city;
 
 	@Column(name = "addres")
 	@NotEmpty(message = "Falta o hay un error en addres")
-	String addres;
+	private String addres;
 
 	@Column(name = "type")
 	@NotEmpty(message = "Falta o hay un error en type")
-	String type;
+	private String type;
 
 	@Column(name = "capacity")
 	@NotEmpty(message = "Falta o hay un error en capacity")
-	String capacity;
+	private String capacity;
 
 }
