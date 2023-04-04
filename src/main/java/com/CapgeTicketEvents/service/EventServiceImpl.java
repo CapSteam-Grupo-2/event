@@ -1,10 +1,10 @@
-package com.CapgeTicketEvents.service;
+package com.capgeticketevents.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.CapgeTicketEvents.model.Event;
-import com.CapgeTicketEvents.repository.EventRepository;
+import com.capgeticketevents.model.Event;
+import com.capgeticketevents.repository.EventRepository;
 
 
 @Service
