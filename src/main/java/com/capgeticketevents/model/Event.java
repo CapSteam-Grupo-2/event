@@ -56,8 +56,8 @@ public class Event {
     private String time;
 
 
-    @NotEmpty(message = "Falta o hay un error en location")
+    //@NotEmpty(message = "Falta o hay un error en location")
     @ManyToOne()
-    @JoinColumn()
+    @JoinColumn(name = "id_location")
     private Location location;
 }

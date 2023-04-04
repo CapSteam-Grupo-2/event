@@ -36,23 +36,23 @@ public class Location {
     private List<Event> event;
 
     @Column(name = "name")
-    @NotEmpty(message = "Falta o hay un error en name")
+    //@NotEmpty(message = "Falta o hay un error en name")
     private String name;
 
     @Column(name = "city")
-    @NotEmpty(message = "Falta o hay un error en city")
+    //@NotEmpty(message = "Falta o hay un error en city")
     private String city;
 
     @Column(name = "addres")
-    @NotEmpty(message = "Falta o hay un error en addres")
+    //@NotEmpty(message = "Falta o hay un error en addres")
     private String addres;
 
     @Column(name = "type")
-    @NotEmpty(message = "Falta o hay un error en type")
+    //@NotEmpty(message = "Falta o hay un error en type")
     private String type;
 
     @Column(name = "capacity")
-    @NotEmpty(message = "Falta o hay un error en capacity")
+    //@NotEmpty(message = "Falta o hay un error en capacity")
     private String capacity;
 
 }
