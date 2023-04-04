@@ -1,4 +1,4 @@
-package com.CapgeTicketEvents;
+package com.capgeticketevents;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
