@@ -1,11 +1,15 @@
-package com.CapgeTicketEvents.repository;
+package com.capgeticketevents.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.CapgeTicketEvents.model.Event;
+
+import com.capgeticketevents.model.Event;
 
 @Repository
 public interface EventRepository extends JpaRepository<Event, Long>{
+
+
+
 
 }
