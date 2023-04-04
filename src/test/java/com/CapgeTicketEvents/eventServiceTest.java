@@ -23,14 +23,15 @@ public class eventServiceTest {
 	@MockBean
 	private EventRepository repository;
 
+	
+	//Test para comprobar si es null el metodo de addEvent
 	@Test
-	public void addEventTest_OK() {
+	public void addEventTest_isNotNull() {
 
 		Event event = new Event(10L, "jose", "concierto", "pop", "12-12-12", "17:00", null);
 		Mockito.when(repository.save(event)).thenReturn(event);
 		//Event eventDB = repository.findById(event.getId()).get();
 		assertThat(service.addEvent(event)).isNotNull();
-
 	}
 
 
