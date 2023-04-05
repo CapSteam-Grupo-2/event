@@ -1,7 +1,9 @@
 package com.capgeticketevents.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -9,6 +11,12 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import java.util.List;
+
+import org.hibernate.annotations.Cascade;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,9 +40,6 @@ public class Location {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToMany(mappedBy = "location")
-    private List<Event> event;
-
     @Column(name = "name")
     //@NotEmpty(message = "Falta o hay un error en name")
     private String name;
@@ -54,5 +59,10 @@ public class Location {
     @Column(name = "capacity")
     //@NotEmpty(message = "Falta o hay un error en capacity")
     private String capacity;
+    
+    //@JsonIgnoreProperties({"location"})
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY,  mappedBy = "location", cascade = CascadeType.ALL )
+    private List<Event> event;
 
 }

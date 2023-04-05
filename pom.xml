@@ -17,6 +17,7 @@
 		<java.version>17</java.version>
 		<spring-cloud.version>2022.0.2</spring-cloud.version>
 		<spring-boot-admin.version>2.7.4</spring-boot-admin.version>
+		<org.springdoc-version>1.6.4</org.springdoc-version>
 	</properties>
 	
 	
@@ -104,6 +105,12 @@
     	<artifactId>mysql-connector-j</artifactId>
     	<version>8.0.31</version>
 	</dependency>
+	
+	<dependency>
+		<groupId>org.springdoc</groupId>
+		<artifactId>springdoc-openapi-ui</artifactId>
+		<version>1.6.8</version>
+	</dependency>	
 		
 	</dependencies>
 	

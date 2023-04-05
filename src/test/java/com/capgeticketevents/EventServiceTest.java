@@ -15,13 +15,17 @@ import com.capgeticketevents.service.EventService;
 import com.capgeticketevents.service.EventServiceImpl;
 
 @WebMvcTest(EventServiceImpl.class)
-public class eventServiceTest {
+public class EventServiceTest {
 
 	@Autowired
 	private EventService service;
 	@MockBean
 	private EventRepository repository;
 
+	
+	/**
+	 * Test que comprueba los valores de Event del servicio
+	 */
 	@Test
 	public void addEventTest_OK() {
 
@@ -29,13 +33,6 @@ public class eventServiceTest {
 		repository.save(event);
 		Event eventDB = repository.findById(event.getId()).get();
 		assertThat(eventDB).isNotNull();
-
-		/*
-		 * Event event = new Event(10L,"jose","concierto","pop","12-12-12","17:00",
-		 * null); //Mockito.when(repository.existsByMail("")).thenReturn(false);
-		 * Mockito.when(repository.save(event)).thenReturn(event);
-		 * assertThat(service.addEvent(event)).isEqualTo(Optional.of(event));
-		 */
 	}
 
 	@Test
