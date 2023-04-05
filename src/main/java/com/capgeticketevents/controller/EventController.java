@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.capgeticketevents.converter.EventConverter;
+import com.capgeticketevents.errorcontrol.NullRequest;
 import com.capgeticketevents.model.Event;
 import com.capgeticketevents.model.Location;
 import com.capgeticketevents.repository.LocationRepository;
@@ -106,7 +107,7 @@ public class EventController {
 					),
 			@ApiResponse(
 					responseCode = "400", 
-					description = "No válido (Campos no validos o faltantes) ", 
+					description = "No data found", 
 					content = @Content),
 			}
 	)
@@ -117,7 +118,7 @@ public class EventController {
 
 		// si event = null;
 		if (event.isEmpty()|| event==null) {
-			return ResponseEntity.noContent().build();
+			throw new  NullRequest();
 		}
 
 		return ResponseEntity.ok(event);

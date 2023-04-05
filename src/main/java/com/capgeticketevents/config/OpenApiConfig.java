@@ -19,10 +19,10 @@ public class OpenApiConfig {
                 .description("Documentación de la Student API")
                 .version("v1.0")
                 .contact(new Contact().name("Eventos").
-                        url("https://antoniosantos.es").email("antonio@santos.es"))
+                        url("https://grupoB.es").email("grupoB@event.es"))
                 .license(new License().name("LICENSE").url("http://springdoc.org")))
                 .externalDocs(new ExternalDocumentation()
                 .description("microservicio event")
-                .url("https://miproyecto.es"));
+                .url("https://event.es"));
     }
 }

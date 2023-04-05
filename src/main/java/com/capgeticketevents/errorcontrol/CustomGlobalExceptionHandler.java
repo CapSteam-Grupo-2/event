@@ -75,4 +75,21 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
 
 		return new ResponseEntity<>(customError, HttpStatus.BAD_REQUEST );
 	}
+	
+	@ExceptionHandler(NullRequest.class)
+	public ResponseEntity<Object> NullRequest(NullRequest ex){
+
+		CustomErrorModel customError = new CustomErrorModel();
+		//Paso fecha pero la formatea a String con formato DD/MM/YY
+		
+		customError.setTrace("La datos de Event no se ha podido encontrar");
+		customError.setStatus(400);
+		customError.setError("datos event no found");
+		
+
+
+	
+
+		return new ResponseEntity<>(customError, HttpStatus.NOT_FOUND );
+	}
 }

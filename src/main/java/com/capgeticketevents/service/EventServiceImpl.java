@@ -1,5 +1,6 @@
 package com.capgeticketevents.service;
 
+import com.capgeticketevents.errorcontrol.NullRequest;
 import com.capgeticketevents.model.Event;
 import com.capgeticketevents.repository.EventRepository;
 
@@ -25,7 +26,7 @@ public class EventServiceImpl implements EventService {
 	@Override
 	public  List<Event> listEvent(){
 		if(eventRepository.findAll().isEmpty()) {
-			return null;
+			throw new  NullRequest();
 		}
 		return eventRepository.findAll();
 	}
